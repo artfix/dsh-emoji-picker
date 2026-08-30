@@ -1,0 +1,46 @@
+{
+  "name": "dsh-emoji-picker",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness plugin: an emoji quick-pick button in the chat input toolbar. Click the 😊 button, browse 8 categories (~1870 emoji), click one to insert it at the end of the draft; click anywhere outside to dismiss the panel.",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek",
+    "harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "emoji",
+    "picker",
+    "input"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-client-ui-slots": "*",
+    "react": "^18.2.0"
+  }
+}

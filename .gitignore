@@ -1,0 +1,5 @@
+node_modules/
+*.log
+.DS_Store
+client.tpl.js
+gen-client.mjs

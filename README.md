@@ -1,29 +1,29 @@
 # dsh-emoji-picker
 
-DeepSeek Harness 插件：在聊天输入栏工具栏（模型选择器这一排）加一个 emoji 快捷按钮。点击 **😊**，从 8 个分类（约 1870 个基础 emoji）中挑选，点选即插入草稿末尾；点击面板外任意区域自动收起。
+DeepSeek Harness plugin: adds an emoji quick-button to the chat input toolbar (the row with the model selector). Click **😊** to pick from 8 categories (~1870 base emoji); a click inserts the emoji at the end of your draft. Click anywhere outside the panel to dismiss it.
 
-data 来源：[`@emoji-mart/data`](https://github.com/missive/emoji-mart)（MIT，Unicode 全量），已按官方分类内嵌进插件本体，运行时不依赖任何磁盘文件、也无网络请求。
+Data source: [`@emoji-mart/data`](https://github.com/missive/emoji-mart) (MIT, full Unicode set), embedded into the plugin itself by official category — no disk files or network requests at runtime.
 
-## 功能
+## Features
 
-- 输入栏**左端**（附件控件旁）出现 😊 按钮
-- 面板为**文字分类标签**切换：表情与人物 / 动物与自然 / 食物与饮品 / 活动与节庆 / 旅行与地点 / 物品 / 符号 / 旗帜
-- 点击某分类，下方网格显示该分类全部 emoji；点击插入草稿末尾
-- **点击面板外任意区域**自动关闭（也可点 × 或再按按钮）
+- A 😊 button appears at the **left end** of the input bar (next to the attachment control)
+- The panel switches between **text category tabs**: Smileys & People / Animals & Nature / Food & Drinks / Activities & Events / Travel & Places / Objects / Symbols / Flags
+- Click a category and the grid below shows all emoji in that category; click one to insert it at the end of your draft
+- **Clicking anywhere outside the panel** closes it automatically (you can also click × or press the button again)
 
-## 安装
+## Install
 
 ```bash
 dsh plugin --profile web add github:Arthu77/dsh-emoji-picker
 ```
 
-重启 `dsh web` 后生效。若你的 profile 名不是 `web`，把 `--profile web` 换成你的 profile 名。
+Takes effect after restarting `dsh web`. If your profile name isn't `web`, replace `--profile web` with your profile name.
 
-> ⚠️ 本机（Windows）若遇到 pnpm 安装 git 仓库报 `EPERM`，可手动安装：把仓库 `tar.gz` 解压后，将整个文件夹复制到 `<profile>/node_modules/dsh-emoji-picker`，再在 `<profile>/cordis.patch.yml` 加入 `- insert: { - id: emoji-quick, name: 'dsh-emoji-picker' }`，然后重启。
+> ⚠️ On this machine (Windows), if `pnpm` reports `EPERM` when installing from a git repo, install manually: extract the repo's `tar.gz`, copy the whole folder to `<profile>/node_modules/dsh-emoji-picker`, then add `- insert: { - id: emoji-quick, name: 'dsh-emoji-picker' }` to `<profile>/cordis.patch.yml`, and restart.
 
-## 截图
+## Screenshot
 
-![面板 Demo](ScreenShot.png)
+![Panel Demo](ScreenShot.png)
 
 ## License
 
